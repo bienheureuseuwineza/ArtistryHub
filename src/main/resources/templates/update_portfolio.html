@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <title>Creative-Craze</title>
+
+  <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+  />
+
+  <link rel="stylesheet" href="/css/styleee.css" />
+</head>
+
+<body>
+
+<section class="vetra">
+  <aside class="sidebar reverse">
+    <div class="logo-box flex-vertical">
+      <a href="#" class="logo flex-vertical">
+        <img class="image" src="/images/bg.png" alt="sf logo" />
+      </a>
+      <div class="close-sidebar">
+        <i class="bi bi-x"></i>
+      </div>
+    </div>
+    <div class="sidebar-box scrollable scroll-visible">
+      <div class="account rounded bg-white flex-vertical">
+        <div class="account-image circle">
+          <img
+                  class="image"
+                  src="/images/Models/model22 (1).jpg"
+                  alt="avatar"
+          />
+        </div>
+        <div class="account-infor">
+          <h4 class="name">MS</h4>
+          <span class="role">ADMIN</span>
+        </div>
+        <ul class="account-action bg-white rounded">
+          <li class="account-action-item">
+            <a href="#">
+              <i class="bi bi-person"></i>
+              Profile
+            </a>
+          </li>
+          <li class="account-action-item">
+            <a href="#">
+              <i class="bi bi-envelope"></i>
+              Inbox
+            </a>
+          </li>
+          <li class="account-action-item setting">
+            <a href="#">
+              <i class="bi bi-gear"></i>
+              Setting
+            </a>
+          </li>
+          <li class="account-action-item">
+            <a href="#">
+              <i class="bi bi-box-arrow-right"></i>
+              Logout
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-group">
+        <span class="sidebar-title">Fashion-Agency</span>
+        <ul class="sidebar-list">
+          <li class="sidebar-item active">
+            <a href="#">
+              <i class="bi bi-bar-chart"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <!--          <li class="sidebar-item parent">-->
+          <!--            <a th:href="@{/add_portfolio}">-->
+          <!--              <i class="bi bi-person-plus"></i>-->
+          <!--              <span>Create profile</span>-->
+          <!--            </a>-->
+          <!--          </li>-->
+          <!--          <li class="sidebar-item parent">-->
+          <!--            <a href="#">-->
+          <!--              <i class="bi bi-folder-plus"></i>-->
+          <!--              <span>Create Portfolio</span>-->
+          <!--            </a>-->
+          <!--          </li>-->
+          <!--          <li class="sidebar-item parent">-->
+          <!--            <a >-->
+          <!--              <i class="bi bi-pencil-square"></i>-->
+          <!--              <span>Update Profile</span>-->
+          <!--            </a>-->
+          <!--          </li>-->
+
+          <!--          <li class="sidebar-item parent">-->
+          <!--            <a href="#">-->
+          <!--              <i class="bi bi-folder-x"></i>-->
+          <!--              <span>Delete Profile</span>-->
+          <!--            </a>-->
+          <!--          </li>-->
+          <li class="sidebar-item">
+            <a th:href="@{/logout}">
+              <i class="bi bi-door-closed"></i>
+              <span>Logout</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+  <section class="container">
+    <div class="main">
+      <nav class="header bg">
+        <div class="menu-sidebar">
+          <i class="bi bi-list"></i>
+        </div>
+        <div class="title">
+          <h2>Dashboard</h2>
+        </div>
+        <form th:action="@{/admin}" >
+          <div class="search-box flex-vertical bg-white">
+            <label for="search">
+              <i class="bi bi-search"></i>
+            </label>
+
+            <input
+                    id="search"
+                    type="text"
+                    name="search"
+                    placeholder="Search..."
+                    th:value="${keyword}"
+            />
+            <!--          <button type="submit"></button>-->
+            <!--          <button type="button" onclick="clear"></button>-->
+
+          </div>
+          <button class="primary-btn rounded flex-center" type="submit">Submit</button>
+        </form>
+        <a class="primary-btn rounded flex-center" th:href="@{/download-pdf}">
+          <i class="bi bi-download"></i>
+          <span>Download pdf</span>
+        </a>
+      </nav>
+      <div class="content">
+        <ul class="report-list flex">
+          <li class="report-item medium flex column orders">
+            <div class="report-header flex-vertical">
+              <h3 class="icon"><i class="bi bi-images"></i></h3>
+              <div class="report-action">
+
+              </div>
+            </div>
+            <h3 class="report-title">Portfolios</h3>
+            <div class="report-card bg-white rounded"></div>
+          </li>
+          <li class="report-item medium flex column sales">
+            <div class="report-header flex-vertical">
+              <h3 class="icon">
+                <i class="bi bi-people-fill"></i>
+              </h3>
+              <div class="report-action">
+
+              </div>
+            </div>
+            <h3 class="report-title">Artists</h3>
+            <div class="report-card bg-white rounded"></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="another">
+      <div id="infor">
+        <div class="wrapper">
+          <div class="table" >
+            <div class="row header blue">
+              <table width="100%">
+                <thead>
+                <tr>
+                  <td>OwnerId</td>
+                  <td>OwnerEmail</td>
+                  <td>Age</td>
+                  <td>Nationality</td>
+                  <td>Description</td>
+                  <td>Names</td>
+                  <td>Action</td>
+                </tr>
+
+                </thead>
+
+                <tbody>
+                <tr th:each="portfolio:${portfolios}">
+                  <td th:text="${portfolio.getId()}"></td>
+                  <td th:text="${portfolio.getOwnerEmail()}"></td>
+                  <td th:text="${portfolio.getAge()}"></td>
+                  <td th:text="${portfolio.getNationality()}"></td>
+                  <td th:text="${portfolio.getMessage()}"></td>
+                  <td th:text="${portfolio.getName()}"></td>
+                  <td >
+                    <a th:href="@{/delete_profile/{id}(id =${portfolio.getId()})}" onclick="return confirm('Are you sure you want to delete your profile')">delete</a>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+</body>
+</html>
