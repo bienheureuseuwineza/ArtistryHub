@@ -5,7 +5,6 @@ import com.cc.creativecraze.model.Role;
 import com.cc.creativecraze.model.User;
 import com.cc.creativecraze.repository.RoleRepository;
 import com.cc.creativecraze.repository.UserRepository;
-import jakarta.annotation.Resource;
 import jakarta.mail.internet.MimeMessage;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.mail.SimpleMailMessage;
@@ -17,7 +16,6 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
 import java.util.*;
 import java.util.stream.Collectors;
 @Service

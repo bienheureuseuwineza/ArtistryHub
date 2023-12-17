@@ -16,6 +16,6 @@ public class UserDto {
     private String email;
     private String number;
     private String password;
-    private List<RoleDto> roles;
+    private List<com.cc.creativecraze.dto.RoleDto> roles;
 }
 

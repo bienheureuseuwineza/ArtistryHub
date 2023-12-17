@@ -6,13 +6,7 @@ import com.cc.creativecraze.model.Portfolio;
 import com.cc.creativecraze.model.User;
 import com.cc.creativecraze.service.PortfolioService;
 import com.cc.creativecraze.service.UserService;
-import jakarta.servlet.http.HttpSession;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.Banner;
 import org.springframework.data.repository.query.Param;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -22,7 +16,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 public class AuthController {
@@ -40,10 +33,12 @@ public class AuthController {
         return "index";
     }
     @GetMapping("/login")
-    public  String showLoginForm(){
+    public String showLoginForm(@RequestParam(name = "error", required = false) String error, Model model) {
+        if (error != null) {
+            model.addAttribute("loginError", "Invalid email or password. Please try again.");
+        }
         return "login";
     }
-
     @GetMapping("/register")
     public String showRegistrationForm(Model model){
         UserDto user = new UserDto();

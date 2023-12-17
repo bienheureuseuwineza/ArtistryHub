@@ -8,20 +8,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
-    <title>Creative-Craze Dashboard</title>
+    <title>Artistry Hub - New Dashboard</title>
 
     <!-- Custom fonts for this template-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
     <link href="../static/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-          rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-
-
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+    <style>
+        body, #wrapper {
+            background-image: url('https://source.unsplash.com/featured/?abstract,music'); /* New Unsplash image */
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .bg-gradient-primary {
+            background-color: #4e73df; /* Slightly different shade */
+            background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
+        }
+
+        .navbar-nav {
+            font-family: 'Roboto', sans-serif; /* New font */
+        }
+        /*!* ... [other styles] ... *!*/
+        /*#welcomeSection{*/
+        /*    background: url('https://images.unsplash.com/photo-1470229538611-16ba8c7ffbd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8bXVzaWN8fHx8fHwxNjE5MDU3NTAz&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center;*/
+        /*    background-size: cover;*/
+        /*}*/
+
+        /*#back{*/
+        /*    background: url('https://images.unsplash.com/photo-1470229538611-16ba8c7ffbd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8bXVzaWN8fHx8fHwxNjE5MDU3NTAz&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center;*/
+        /*    background-size: cover;*/
+        /*}*/
+
+    </style>
 
 </head>
 
@@ -34,11 +57,11 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center">
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-laugh-wink"></i>
             </div>
-            <div class="sidebar-brand-text mx-3">Creative Craze</div>
+            <div class="sidebar-brand-text mx-3">Artistry Hub </div>
         </a>
 
         <!-- Divider -->
@@ -114,7 +137,7 @@
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="mr-2 d-none d-lg-inline text-gray-600 small" style="font-size: larger; font-weight: bold;" th:text="${loggedInUserName}"></span>
                             <img class="img-profile rounded-circle"
-                                 src="img/undraw_profile.svg">
+                                 src="https://images.unsplash.com/photo-1501084817091-a4f3d1d19e07?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
                         </a>
                         <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -147,7 +170,7 @@
                                 <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" th:href="@{/download-artistPdf/{email}(email=${portfolios[0].ownerEmail})}">
                                     <i class="fas fa-download fa-sm text-white-50"></i> Download pdf</a>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body" id="back">
                                 <div class="table-responsive">
                                     <!-- Your table content -->
                                     <table class="table table-bordered" width="100%" th:if="${not #lists.isEmpty(portfolios)}">
@@ -159,7 +182,6 @@
                                             <th>Age</th>
                                             <th>Nationality</th>
                                             <th>Description</th>
-                                            <th>Portfolio</th>
                                             <th>Action</th>
                                         </tr>
                                         </thead>
@@ -172,11 +194,6 @@
                                             <td th:text="${item.age}"></td>
                                             <td th:text="${item.nationality}"></td>
                                             <td th:text="${item.message}"></td>
-                                            <td>
-                                                <a th:href="@{/download-portfolio-pdf/{id}(id=${item.id})}" class="btn btn-primary">
-                                                    <i class="fas fa-download fa-sm text-white-50"></i> Download Portfolio
-                                                </a>
-                                            </td>
                                             <td>
                                                 <a th:href="@{/update-artist/{id}(id=${item.id})}" class="btn btn-warning">Edit</a>
                                                 <a th:href="@{/delete_artist/{id}(id=${item.id})}" class="btn btn-danger"
@@ -211,11 +228,11 @@
                     </div>
 
                     <!-- Welcome Section (initially hidden) -->
-                    <div class="col-lg-7 mb-4" id="welcomeSection" style="display: none;">
+                    <div class="col-lg-7 mb-4" id="welcomeSection" style="display: none;" >
 
-                        <div class="card shadow mb-4">
+                        <div class="card shadow mb-4" id="background">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Welcome to Creative Craze Dashboard</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Welcome to the Artistry Hub Dashboard</h6>
                             </div>
                             <div class="card-body">
                                 <p>This is the dashboard welcome section. Feel free to explore!</p>
@@ -252,7 +269,7 @@
         <footer class="sticky-footer bg-white">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; Creative Craze 2023</span>
+                    <span>Copyright &copy; Artistry hub 2023</span>
                 </div>
             </div>
         </footer>
@@ -292,7 +309,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to log out?</h5>
                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
@@ -300,11 +317,12 @@
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" th:href="@{/index}">Logout</a>
+                <a class="btn btn-danger" th:href="@{/index}">Logout</a> <!-- Changed to btn-danger for red color -->
             </div>
         </div>
     </div>
 </div>
+
 
 <!-- Bootstrap core JavaScript-->
 <script src="../static/js/bootstrap.bundle.min.js"></script>

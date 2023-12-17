@@ -20,22 +20,52 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Times New Roman', serif; /* Times New Roman Font for all text */
+      background: url('https://images.unsplash.com/photo-1470229538611-16ba8c7ffbd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8bXVzaWN8fHx8fHwxNjE5MDU3NTAz&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center; /* Music-themed background */
+      background-size: cover;
+    }
+    .card-body {
+      background-color: rgba(211, 211, 211, 0.5); /* Clear grey background for login form */
+    }
+    #sparkle {
+      background: -webkit-linear-gradient(45deg, #ff6a00, #ee82ee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: sparkle 1.5s linear infinite;
+    }
+    @keyframes sparkle {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    #background{
+      background: url('https://images.unsplash.com/photo-1470229538611-16ba8c7ffbd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8bXVzaWN8fHx8fHwxNjE5MDU3NTAz&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center;
+      background-size: cover;
+    }
 
+    #color{
+      background-color: #d2f4e8;
+    }
+
+
+  </style>
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-gradient-primary" id="background">
 
 <div class="container">
 
   <div class="card o-hidden border-0 shadow-lg my-5">
     <div class="card-body p-0">
       <!-- Nested Row within Card Body -->
-      <div class="row">
+      <div class="row" id="color">
         <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
         <div class="col-lg-7">
           <div class="p-5">
             <div class="text-center">
-              <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+              <h1 class="h4 text-gray-900 mb-4" id="sparkle">Create an Account!</h1>
             </div>
             <form th:action="@{/register}" method="post" class="user" onsubmit="return validatePassword();">
               <div class="form-group">

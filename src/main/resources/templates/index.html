@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
+    <meta name="description" content="Artistry Hub - A Place for Diverse Artists. Showcasing paintings, music, and more." />
     <meta name="author" content="" />
-    <title>Creative-Craze</title>
+    <title>Artist Hub</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="https://images.unsplash.com/photo-1501084817091-a4f3d1d19e07?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
@@ -15,58 +15,97 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles1.css" rel="stylesheet" />
+    <style>
+        /* Additional Styles */
+        #mainNav {
+            background-color: #007bff; /* Blue color for navbar */
+        }
+        #background{
+            background: url('https://images.unsplash.com/photo-1470229538611-16ba8c7ffbd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8bXVzaWN8fHx8fHwxNjE5MDU3NTAz&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center;
+            background-size: cover;
+        }
+
+        #button{
+            background-color: #007bff;
+        }
+
+
+        .navbar-brand {
+            font-family: 'Dancing Script', cursive;
+            color: rgba(255, 255, 255, 0.5); /* Watermark effect */
+            font-size: 30px;
+            background: -webkit-linear-gradient(45deg, #ff6a00, #ee82ee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: sparkle 1.5s linear infinite;
+        }
+        @keyframes sparkle {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        /* Custom font styles */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Pacifico', cursive;
+        }
+    </style>
 </head>
 <body id="page-top">
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand" href="#page-top">Creative-Craze</a>
+        <a class="navbar-brand" href="#page-top">Artistry Hub</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu
             <i class="fas fa-bars ms-1"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                <!-- Thymeleaf syntax for href -->
+                <li class="nav-item"><a class="nav-link" href="#paintings">Paintings</a></li>
+                <li class="nav-item"><a class="nav-link" href="#music">Music</a></li>
                 <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
             </ul>
         </div>
     </div>
 </nav>
 <!-- Masthead -->
-<header class="masthead">
+<header class="masthead" id="background">
     <div class="container">
-        <div class="masthead-subheading">Welcome To Creative-Craze!</div>
-        <div class="masthead-heading text-uppercase">It's All About Your Creative Journey</div>
-        <!-- Thymeleaf syntax for href -->
-        <a class="btn btn-primary btn-xl text-uppercase" th:href="@{/login}">Let us Begin</a>
+        <div class="masthead-subheading">Welcome To The Artistry Hub!</div>
+        <div class="masthead-heading text-uppercase">A Melting Pot of Creative Minds</div>
+        <a class="btn btn-primary btn-xl text-uppercase" id="button" th:href="@{/login}">Explore Now</a>
     </div>
 </header>
-<!-- Services -->
-<section class="page-section" id="services">
+<!-- Paintings Section -->
+<section id="paintings" class="page-section bg-light">
     <div class="container">
         <div class="text-center">
-            <h2 class="section-heading text-uppercase">Our Services</h2>
-            <h3 class="section-subheading text"><b>ShowCase Your Creative Potential with Us.</b></h3>
+            <h2 class="section-heading text-uppercase">Paintings</h2>
+            <h3 class="section-subheading text-muted">Explore stunning artworks from diverse artists.</h3>
         </div>
-        <div class="row text-center">
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-paint-brush fa-stack-1x fa-inverse"></i>
-                </span>
-                <h4 class="my-3">Creative Design</h4>
-                <p class="text"><b>Bring your ideas to life with paintings and show the world your brilliance!. we've got you covered.</b></p>
+        <div class="row">
+            <div class="col-lg-6 col-sm-12 mb-4">
+                <img src="https://images.unsplash.com/photo-1526382925646-27b5eb86796e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8cGFpbnRpbmdzfHx8fHx8MTYxOTA1NzQ5OQ&ixlib=rb-1.2.1&q=80&w=1080" alt="Painting" class="img-fluid">
             </div>
-            <div class="col-md-4">
+            <div class="col-lg-6 col-sm-12 mb-4">
+                <img src="https://images.unsplash.com/photo-1461344577544-4e5dc9487184?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8cGFpbnRpbmdzfHx8fHx8MTYxOTA1NzQ5OQ&ixlib=rb-1.2.1&q=80&w=1080" alt="Painting" class="img-fluid">
             </div>
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-camera-retro fa-stack-1x fa-inverse"></i>
-                </span>
-                <h4 class="my-3">Photography</h4>
-                <p class="text"><b>Capture the essence of your creativity through pictures and showcase your skills. Every picture tells a story.</b></p>
+        </div>
+    </div>
+</section>
+<!-- Music Section -->
+<section id="music" class="page-section">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Music</h2>
+            <h3 class="section-subheading text-muted">A Symphony of Sounds and Styles.</h3>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-sm-12 mb-4">
+                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8bXVzaWN8fHx8fHwxNjE5MDU3NTAz&ixlib=rb-1.2.1&q=80&w=1080" alt="Music" class="img-fluid">
+            </div>
+            <div class="col-lg-6 col-sm-12 mb-4">
+                <img src="https://images.unsplash.com/photo-1506792006437-256b665541e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8bXVzaWN8fHx8fHwxNjE5MDU3NTAz&ixlib=rb-1.2.1&q=80&w=1080" alt="Music" class="img-fluid">
             </div>
         </div>
     </div>
@@ -75,7 +114,7 @@
 <footer class="footer py-4">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-4 text-lg-start">Copyright &copy; Creative-Craze 2023</div>
+            <div class="col-lg-4 text-lg-start">Copyright &copy; Artistry Hub 2023</div>
             <div class="col-lg-4 my-3 my-lg-0">
                 <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                 <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
